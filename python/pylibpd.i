@@ -216,7 +216,7 @@ def libpd_release():
 class PdManager:
   def __init__(self, inChannels, outChannels, sampleRate, ticks):
     self.__ticks = ticks
-    self.__outbuf = array.array('b', '\x00\x00'.encode() * outChannels * libpd_blocksize())
+    self.__outbuf = array.array('h', '\x00\x00'.encode() * outChannels * libpd_blocksize())
     libpd_compute_audio(1)
     libpd_init_audio(inChannels, outChannels, sampleRate)
   def process(self, inBuffer):
