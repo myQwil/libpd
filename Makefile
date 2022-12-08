@@ -224,6 +224,7 @@ CFLAGS = -DPD -DUSEAPI_DUMMY -DPD_INTERNAL -DHAVE_UNISTD_H \
 LDFLAGS += $(ADDITIONAL_LDFLAGS)
 CSHARP_LDFLAGS += $(ADDITIONAL_LDFLAGS)
 JAVA_LDFLAGS += $(ADDITIONAL_LDFLAGS)
+include extra.make
 
 .PHONY: libpd csharplib javalib javadoc javasrc install uninstall clean clobber
 

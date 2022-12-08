@@ -44,7 +44,8 @@ setup(name='pypdlib',
                   define_macros = pd_defines,
                   include_dirs = [
                     '../libpd_wrapper',
-                    '../pure-data/src'
+                    '../pure-data/src',
+                    '../../pd-cyclone/shared'
                   ],
                   libraries = pd_libraries,
                   sources = [
@@ -141,7 +142,37 @@ setup(name='pypdlib',
                     '../pure-data/extra/pd~/pd~.c', \
                     '../pure-data/extra/pique/pique.c', \
                     '../pure-data/extra/sigmund~/sigmund~.c', \
-                    '../pure-data/extra/stdout/stdout.c'
+                    '../pure-data/extra/stdout/stdout.c', \
+                    '../../pd-quilt/src/0x40paq.c', \
+                    '../../pd-quilt/src/0x40unpaq.c', \
+                    '../../pd-quilt/src/blunt.c', \
+                    '../../pd-quilt/src/chrd.c', \
+                    '../../pd-quilt/src/chrono.c', \
+                    '../../pd-quilt/src/delp.c', \
+                    '../../pd-quilt/src/fldec.c', \
+                    '../../pd-quilt/src/flenc.c', \
+                    '../../pd-quilt/src/fton.c', \
+                    '../../pd-quilt/src/has.c', \
+                    '../../pd-quilt/src/is.c', \
+                    '../../pd-quilt/src/linp.c', \
+                    '../../pd-quilt/src/linp~.c', \
+                    '../../pd-quilt/src/metro~.c', \
+                    '../../pd-quilt/src/muse.c', \
+                    '../../pd-quilt/src/ntof.c', \
+                    '../../pd-quilt/src/paq.c', \
+                    '../../pd-quilt/src/radix.c', \
+                    '../../pd-quilt/src/rand.c', \
+                    '../../pd-quilt/src/rind.c', \
+                    '../../pd-quilt/src/same.c', \
+                    '../../pd-quilt/src/slx.c', \
+                    '../../pd-quilt/src/sly.c', \
+                    '../../pd-quilt/src/tabosc2~.c', \
+                    '../../pd-quilt/src/tabread2~.c', \
+                    '../../pd-quilt/src/unpaq.c', \
+                    '../../pd-quilt/src/all/quilt.c', \
+                    '../../pd-cyclone/cyclone_objects/binaries/audio/curve.c', \
+                    '../../pd-cyclone/cyclone_objects/binaries/audio/lessthan.c', \
+                    '../../pd-cyclone/cyclone_objects/binaries/audio/greaterthan.c'
                   ]
         )
       ]
