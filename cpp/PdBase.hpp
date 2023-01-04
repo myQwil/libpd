@@ -464,8 +464,8 @@ public:
     /// set this to NULL to disable callback receiving and re-enable the
     /// event queue
     ///
-    void setReceiver(pd::PdReceiver *receiver) {
-        this->receiver = receiver;
+    void setReceiver(pd::PdReceiver *r) {
+        receiver = r;
     }
 
 /// \section Midi Receiving via Callbacks
@@ -476,8 +476,8 @@ public:
     ///
     /// set this to NULL to disable midi events and re-enable the midi queue
     ///
-    void setMidiReceiver(pd::PdMidiReceiver *midiReceiver) {
-        this->midiReceiver = midiReceiver;
+    void setMidiReceiver(pd::PdMidiReceiver *r) {
+        midiReceiver = r;
     }
 
 /// \section Send Functions

@@ -118,7 +118,7 @@ struct Bang {
 
     const std::string dest; ///< dest receiver name
 
-    explicit Bang(const std::string &dest) : dest(dest) {}
+    explicit Bang(const std::string &d) : dest(d) {}
 };
 
 /// float value
@@ -127,8 +127,8 @@ struct Float {
     const std::string dest; ///< dest receiver name
     const float num;        ///< the float value
 
-    Float(const std::string &dest, const float num) :
-        dest(dest), num(num) {}
+    Float(const std::string &d, const float n) :
+        dest(d), num(n) {}
 };
 
 /// symbol value
@@ -137,8 +137,8 @@ struct Symbol {
     const std::string dest;   ///< dest receiver name
     const std::string symbol; ///< the symbol value
 
-    Symbol(const std::string &dest, const std::string &symbol) :
-        dest(dest), symbol(symbol) {}
+    Symbol(const std::string &d, const std::string &s) :
+        dest(d), symbol(s) {}
 };
 
 /// a compound message containing floats and symbols
@@ -331,7 +331,7 @@ struct FinishList {
 
     const std::string dest; ///< dest receiver name
 
-    explicit FinishList(const std::string &dest) : dest(dest) {}
+    explicit FinishList(const std::string &d) : dest(d) {}
 };
 
 /// finish a compound message as a typed message
@@ -340,8 +340,8 @@ struct FinishMessage {
     const std::string dest; ///< dest receiver name
     const std::string msg;  ///< target msg at the dest
 
-    FinishMessage(const std::string &dest, const std::string &msg) :
-            dest(dest), msg(msg) {}
+    FinishMessage(const std::string &d, const std::string &m) :
+            dest(d), msg(m) {}
 };
 
 /// \section Pd stream interface midi objects
@@ -354,8 +354,8 @@ struct NoteOn {
     const int pitch;    ///< pitch (0 - 127)
     const int velocity; ///< velocity (0 - 127)
 
-    NoteOn(const int channel, const int pitch, const int velocity=64) :
-        channel(channel), pitch(pitch), velocity(velocity) {}
+    NoteOn(const int c, const int p, const int v=64) :
+        channel(c), pitch(p), velocity(v) {}
 };
 
 /// change a control value aka send a CC message
@@ -365,8 +365,8 @@ struct ControlChange {
     const int controller; ///< controller (0 - 127)
     const int value;      ///< value (0 - 127)
 
-    ControlChange(const int channel, const int controller, const int value) :
-        channel(channel), controller(controller), value(value) {}
+    ControlChange(const int ch, const int ct, const int v) :
+        channel(ch), controller(ct), value(v) {}
 };
 
 /// change a program value (ie an instrument)
@@ -375,8 +375,8 @@ struct ProgramChange {
     const int channel; ///< channel (0 - 15 * dev#)
     const int value;   ///< value (0 - 127)
 
-    ProgramChange(const int channel, const int value) :
-        channel(channel), value(value) {}
+    ProgramChange(const int c, const int v) :
+        channel(c), value(v) {}
 };
 
 /// change the pitch bend value
@@ -385,8 +385,8 @@ struct PitchBend {
     const int channel; ///< channel (0 - 15 * dev#)
     const int value;   ///< value (-8192 - 8192)
 
-    PitchBend(const int channel, const int value) :
-        channel(channel), value(value) {}
+    PitchBend(const int c, const int v) :
+        channel(c), value(v) {}
 };
 
 /// change an aftertouch value
@@ -395,8 +395,8 @@ struct Aftertouch {
     const int channel; ///< channel (0 - 15 * dev#)
     const int value;   ///< value (0 - 127)
 
-    Aftertouch(const int channel, const int value) :
-        channel(channel), value(value) {}
+    Aftertouch(const int c, const int v) :
+        channel(c), value(v) {}
 };
 
 /// change a poly aftertouch value
@@ -406,8 +406,8 @@ struct PolyAftertouch {
     const int pitch;   ///< pitch (0 - 127)
     const int value;   ///< value (0 - 127)
 
-    PolyAftertouch(const int channel, const int pitch, const int value) :
-        channel(channel), pitch(pitch), value(value) {}
+    PolyAftertouch(const int c, const int p, const int v) :
+        channel(c), pitch(p), value(v) {}
 };
 
 /// a raw midi byte
@@ -417,7 +417,7 @@ struct MidiByte {
                     ///< see http://en.wikipedia.org/wiki/PortMidi
     const unsigned char byte; ///< the raw midi byte value
 
-    MidiByte(const int port, unsigned char byte) : port(port), byte(byte) {}
+    MidiByte(const int p, unsigned char b) : port(p), byte(b) {}
 };
 
 /// start a raw midi byte stream
@@ -425,7 +425,7 @@ struct StartMidi {
 
     const int port; ///< raw portmidi port
 
-    explicit StartMidi(const int port=0) : port(port) {}
+    explicit StartMidi(const int p=0) : port(p) {}
 };
 
 /// start a raw sysex byte stream
@@ -433,7 +433,7 @@ struct StartSysex {
 
     const int port; ///< raw portmidi port
 
-    explicit StartSysex(const int port=0) : port(port) {}
+    explicit StartSysex(const int p=0) : port(p) {}
 };
 
 /// start a sys realtime byte stream
@@ -441,7 +441,7 @@ struct StartSysRealTime {
 
     const int port; ///< raw portmidi port
 
-    explicit StartSysRealTime(const int port=0) : port(port) {}
+    explicit StartSysRealTime(const int p=0) : port(p) {}
 };
 
 /// finish a midi byte stream
